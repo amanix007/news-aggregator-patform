@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import QuestionList from "./AdminQuestionList";
-import UserQuestionList from "./UserQuestionList";
+
 import Login from "./components/Common/Login";
 import { CssBaseline } from "@mui/material";
 
@@ -40,23 +39,16 @@ const App: React.FC = () => {
             element={<Login Auth={Auth} setAuth={setAuth} />}
           />
 
-          <Route
+          {/* <Route
             path="/admin/questions"
             element={
               <PrivateRoute Auth={Auth} role="admin">
                 <QuestionList Auth={Auth} />
               </PrivateRoute>
             }
-          />
+          /> */}
 
-          <Route
-            path="/user/answers"
-            element={
-              <PrivateRoute Auth={Auth} role="user">
-                <UserQuestionList />
-              </PrivateRoute>
-            }
-          />
+          
         </Routes>
       </Container>
     </>
