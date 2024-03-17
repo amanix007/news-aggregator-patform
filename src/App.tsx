@@ -8,7 +8,7 @@ import Container from "@mui/material/Container";
 
 import "./App.css";
 import { AuthInterface } from "./types/types";
-import PrivateRoute from "./misc/PriavateRoute";
+// import PrivateRoute from "./misc/PriavateRoute";
 import Navigation from "./components/Common/Navigation";
 import HomePage from "./page-layout/homepage";
 

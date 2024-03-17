@@ -7,7 +7,9 @@ import {
   Grid,
   Avatar,
   styled,
+  Box,
 } from "@mui/material";
+import SearchInput from "../components/Common/SerchInput";
 
 const articles = [
   {
@@ -36,7 +38,7 @@ const articles = [
 const StyledCard = styled(Card)(({ theme }) => ({
   display: "flex",
   marginBottom: theme.spacing(2),
-  padding: 16
+  padding: 16,
 }));
 
 const StyledAvatar = styled(Avatar)(({ theme }) => ({
@@ -50,13 +52,18 @@ type Props = {};
 export default function HomePage({}: Props) {
   return (
     <div>
-      <Grid container spacing={2} sx={{mt:2}}>
+      <Grid container spacing={2} sx={{ mt: 2 }}>
+        <Box>
+          <SearchInput />
+        </Box>
         {articles.map((article) => (
           <Grid item xs={12} key={article.id}>
             <StyledCard>
               <StyledAvatar alt={article.author} src={article.imageUrl} />
               <div>
-                <Typography variant="h6">{article.title}</Typography>
+                <Typography variant="h6">
+                  <a href="#">{article.title}</a>{" "}
+                </Typography>
                 <Typography variant="subtitle2" color="textSecondary">
                   {`${article.author} - ${article.date} - ${article.category} - ${article.source}`}
                 </Typography>
