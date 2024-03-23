@@ -16,8 +16,6 @@ export const searchIntheGurdian =async (queryString: String)=> {
   } catch (error) {
     return api.handleError(error);
   }
-
-
 }
 export const searchInNyTimes =async (queryString: String)=> {
   try {
