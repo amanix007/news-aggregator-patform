@@ -1,6 +1,8 @@
 import axios, { AxiosInstance } from 'axios';
-import { AUTH_HEADER_KEY, axios_timeout } from '@app/config/constants';
-import { API_BASE_URL } from '@app/config';
+
+
+import { AUTH_HEADER_KEY, axios_timeout } from '../config/constants';
+import { API_BASE_URL } from '../config';
 
 interface API extends AxiosInstance {
   setToken: (token: string) => void;
@@ -62,11 +64,4 @@ api.interceptors.response.use(
 
 export default api;
 
-export const ST_GET_REQUEST = async (query: string, errorCallBack) => {
-  try {
-    const { data } = await api.get(encodeURI(query));
-    return data.response;
-  } catch ({ error }) {
-    return api.handleError(error, errorCallBack);
-  }
-};
+

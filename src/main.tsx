@@ -5,6 +5,7 @@ import "./index.css";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./theme/theme.ts";
 import { BrowserRouter } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <>
@@ -19,6 +20,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <App />
+      <Toaster/>
       </BrowserRouter>
     </ThemeProvider>
   </React.StrictMode>

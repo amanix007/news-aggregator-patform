@@ -1,3 +1,4 @@
+import { NewsSources } from "../config/constants";
 
 
 interface ProfileInterface {
@@ -7,7 +8,7 @@ export interface AdminInterface extends ProfileInterface {
   id: string;
   qustion: string;
   role: "admin"
-  
+
 }
 export interface userInterface extends ProfileInterface {
   id: string;
@@ -17,7 +18,16 @@ export interface userInterface extends ProfileInterface {
 
 export interface AuthInterface {
 
-  authenticated: boolean;
+  authenticated: Boolean;
   roleType: "admin" | "user" | "";
 }
+export type NewSourcesTypes = "newsapi" | "theguardian" | "nytimes"
+export interface ArticleInterface {
+  title: String;
+  date: String;
+  category: String;
+  source: NewSourcesTypes;
+}
+
+
 

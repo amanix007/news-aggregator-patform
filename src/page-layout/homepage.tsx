@@ -10,8 +10,17 @@ import {
   Box,
   Button,
   Skeleton,
+  Container,
 } from "@mui/material";
 import SearchInput from "../components/Common/SerchInput";
+import {
+  responseSerialiser,
+  searchInNewsapi,
+  searchInNyTimes,
+  searchIntheGurdian,
+} from "../misc/common";
+import { isEmpty } from "lodash";
+import toast from "react-hot-toast";
 
 const articles = [
   {
@@ -40,25 +49,25 @@ const articles = [
 
 const data = [
   {
-    src: 'https://i.ytimg.com/vi/pLqipJNItIo/hqdefault.jpg?sqp=-oaymwEYCNIBEHZIVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLBkklsyaw9FxDmMKapyBYCn9tbPNQ',
-    title: 'Don Diablo @ Tomorrowland Main Stage 2019 | Official…',
-    channel: 'Don Diablo',
-    views: '396k views',
-    createdAt: 'a week ago',
+    src: "https://i.ytimg.com/vi/pLqipJNItIo/hqdefault.jpg?sqp=-oaymwEYCNIBEHZIVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLBkklsyaw9FxDmMKapyBYCn9tbPNQ",
+    title: "Don Diablo @ Tomorrowland Main Stage 2019 | Official…",
+    channel: "Don Diablo",
+    views: "396k views",
+    createdAt: "a week ago",
   },
   {
-    src: 'https://i.ytimg.com/vi/_Uu12zY01ts/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLCpX6Jan2rxrCAZxJYDXppTP4MoQA',
-    title: 'Queen - Greatest Hits',
-    channel: 'Queen Official',
-    views: '40M views',
-    createdAt: '3 years ago',
+    src: "https://i.ytimg.com/vi/_Uu12zY01ts/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLCpX6Jan2rxrCAZxJYDXppTP4MoQA",
+    title: "Queen - Greatest Hits",
+    channel: "Queen Official",
+    views: "40M views",
+    createdAt: "3 years ago",
   },
   {
-    src: 'https://i.ytimg.com/vi/kkLk2XWMBf8/hqdefault.jpg?sqp=-oaymwEYCNIBEHZIVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLB4GZTFu1Ju2EPPPXnhMZtFVvYBaw',
-    title: 'Calvin Harris, Sam Smith - Promises (Official Video)',
-    channel: 'Calvin Harris',
-    views: '130M views',
-    createdAt: '10 months ago',
+    src: "https://i.ytimg.com/vi/kkLk2XWMBf8/hqdefault.jpg?sqp=-oaymwEYCNIBEHZIVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLB4GZTFu1Ju2EPPPXnhMZtFVvYBaw",
+    title: "Calvin Harris, Sam Smith - Promises (Official Video)",
+    channel: "Calvin Harris",
+    views: "130M views",
+    createdAt: "10 months ago",
   },
 ];
 const StyledCard = styled(Card)(({ theme }) => ({
@@ -84,84 +93,114 @@ const SearchButton = styled(Button)(({ theme }) => ({
 type Props = {};
 
 export default function HomePage({}: Props) {
-  const [loading, setloading] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
-  const initSearchAll = () => {
+  const [articleList, setarticleList] = useState<any>([]);
+  const [loading, setloading] = useState<Boolean>(false);
+  const [queryString, setQueryString] = useState<String>("bitcoin");
+
+  const combinedDataFetch = async (e) => {
+    e.preventDefault();
+    if (!queryString) {
+      alert("please enter a query");
+      return;
+    }
     setloading(true);
+    const res = await Promise.all([
+    // const [newsapiResponse,theguardianResponse,nytimesResponse] = Promise.all([
+      searchInNewsapi(queryString),
+      searchIntheGurdian(queryString),
+      searchInNyTimes(queryString),
+    ]);
+    console.log(res)
+    // if (isEmpty(newsapiResponse)) {
+    //   toast.error("NewsAPI Data not found");
+    // } else {
+    //   toast.success("NewsAPI Data not found");
+    // }
+    // if (isEmpty(theguardianResponse)) {
+    //   toast.error("the gurdian Data not found");
+    // } else {
+    //   toast.success("the gurdian Data not found");
+    // }
+    // const { articleList, dateRange, categoryList } = responseSerialiser({
+    //   newsapiResponse,
+    //   theguardianResponse,
+    //   nytimesResponse,
+    // });
     setloading(false);
   };
   useEffect(() => {}, []);
   return (
     <div>
-      <Grid container spacing={2} sx={{ mt: 2 }}>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            width: "100%",
-            maxWidth: 700,
-            ml: "auto",
-            mr: "auto",
-            mb: 8,
-          }}
-          component={"form"}
-        >
-          <SearchInput
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-          <SearchButton
-            variant="contained"
-            sx={{ textWrap: "nowrap" }}
-            type="submit"
-            onClick={initSearchAll}
+      <Container maxWidth="xl">
+        <Grid container spacing={2} sx={{ mt: 2 }}>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              width: "100%",
+              maxWidth: 700,
+              ml: "auto",
+              mr: "auto",
+              mb: 8,
+            }}
+            // component={"form"}
           >
-            Search
-          </SearchButton>
-          <SavePreferenceButton variant="outlined">
-            Save Preference
-          </SavePreferenceButton>
-        </Box>
+            <SearchInput
+              value={queryString}
+              onChange={(e) => setQueryString(e.target.value)}
+            />
+            <SearchButton
+              variant="contained"
+              sx={{ textWrap: "nowrap" }}
+              type="submit"
+              onClick={combinedDataFetch}
+            >
+              Search
+            </SearchButton>
+            <SavePreferenceButton variant="outlined">
+              Save Preference
+            </SavePreferenceButton>
+          </Box>
 
-        <Grid container wrap="nowrap">
-          {(loading ? Array.from(new Array(3)) : data).map((item, index) => (
-            <Box key={index} sx={{ width: 252, marginRight: 4, my: 8 }}>
-              {item ? (
-                <img
-                  style={{ width: 252, height: 142 }}
-                  alt={item.title}
-                  src={item.src}
-                />
-              ) : (
-                <Skeleton variant="rectangular" width={252} height={142} />
-              )}
-              {item ? (
-                <Box sx={{ pr: 2 }}>
-                  <Typography gutterBottom variant="body2">
-                    {item.title}
-                  </Typography>
-                  <Typography
-                    display="block"
-                    variant="caption"
-                    color="text.secondary"
-                  >
-                    {item.channel}
-                  </Typography>
-                  <Typography variant="caption" color="text.secondary">
-                    {`${item.views} • ${item.createdAt}`}
-                  </Typography>
-                </Box>
-              ) : (
-                <Box sx={{ pt: 4 }}>
-                  <Skeleton />
-                  <Skeleton width="60%" />
-                </Box>
-              )}
-            </Box>
-          ))}
+          <Grid container wrap="nowrap">
+            {(loading ? Array.from(new Array(3)) : data).map((item, index) => (
+              <Box key={index} sx={{ width: 252, marginRight: 4, my: 8 }}>
+                {item ? (
+                  <img
+                    style={{ width: 252, height: 142 }}
+                    alt={item.title}
+                    src={item.src}
+                  />
+                ) : (
+                  <Skeleton variant="rectangular" width={252} height={142} />
+                )}
+                {item ? (
+                  <Box sx={{ pr: 2 }}>
+                    <Typography gutterBottom variant="body2">
+                      {item.title}
+                    </Typography>
+                    <Typography
+                      display="block"
+                      variant="caption"
+                      color="text.secondary"
+                    >
+                      {item.channel}
+                    </Typography>
+                    <Typography variant="caption" color="text.secondary">
+                      {`${item.views} • ${item.createdAt}`}
+                    </Typography>
+                  </Box>
+                ) : (
+                  <Box sx={{ pt: 4 }}>
+                    <Skeleton />
+                    <Skeleton width="60%" />
+                  </Box>
+                )}
+              </Box>
+            ))}
+          </Grid>
         </Grid>
-      
-      </Grid>
+      </Container>
     </div>
   );
 }

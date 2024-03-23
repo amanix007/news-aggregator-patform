@@ -1,6 +1,6 @@
 export const AUTH_HEADER_KEY = 'accessToken';
 export const axios_timeout = 60000;
-export const sources = {
+export const NewsSources = {
   newsapi: {
     key: "newsapi",
     baseURL: "https://newsapi.org/v2",
@@ -8,8 +8,14 @@ export const sources = {
   },
   theguardian: {
     key: "theguardian",
-    baseURL: "https://newsapi.org/v2",
+    baseURL: "https://content.guardianapis.com",
     apiKey: "b632b12a-acb8-4f97-a2a8-99e8d19cb53e"
+
+  },
+  nytimes: {
+    key: "nytimes",
+    baseURL: "https://api.nytimes.com/svc",
+    apiKey: "qJp7hwXeLouUGgc4LF6OD7yvBGfNMVRS"
 
   },
 }
