@@ -8,8 +8,6 @@ export const searchInNewsapi =async (queryString: String)=> {
   } catch (error) {
     return api.handleError(error);
   }
-
-
 }
 export const searchIntheGurdian =async (queryString: String)=> {
   try {
