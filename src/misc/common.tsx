@@ -30,7 +30,7 @@ export const searchInNyTimes = async (queryString: String) => {
   } catch (error) {
     return api.handleError(error);
   }
-};
+};                                   
 
 export const responseSerialiser = ({
   newsapiResponse,
@@ -49,3 +49,5 @@ export const responseSerialiser = ({
 
   return { categoryList, dateRange, articleList };
 };
+
+
