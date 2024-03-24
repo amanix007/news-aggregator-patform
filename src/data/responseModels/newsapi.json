@@ -1,0 +1,136 @@
+{
+  "status": "ok",
+  "totalResults": 17042,
+  "articles": [
+      {
+          "source": {
+              "id": "wired",
+              "name": "Wired"
+          },
+          "author": "Joel Khalili",
+          "title": "What’s Behind the Bitcoin Price Surge? Vibes, Mostly",
+          "description": "The price of bitcoin has climbed to a new all-time high. But assigning the cryptocurrency a value is anything but trivial.",
+          "url": "https://www.wired.com/story/bitcoin-price-record-economics/",
+          "urlToImage": "https://media.wired.com/photos/65ef46042ca08b0e59a9682f/191:100/w_1280,c_limit/031124-business-bitcoin-economics.jpg",
+          "publishedAt": "2024-03-12T18:13:56Z",
+          "content": "The latest surge in the price of bitcoin is increasing the clamor around it, says Dal Bianco, drawing in yet more speculators and creating a self-reinforcing cycle. Likewise, when collective confiden… [+2967 chars]"
+      },
+      {
+          "source": {
+              "id": "bbc-news",
+              "name": "BBC News"
+          },
+          "author": "https://www.facebook.com/bbcnews",
+          "title": "Woman found with £2bn in Bitcoin convicted",
+          "description": "Jian Wen, 42, from north London, was involved in converting Bitcoin into assets like luxury houses.",
+          "url": "https://www.bbc.co.uk/news/uk-england-london-68620253",
+          "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/17FE5/production/_132977289_wen2.jpg",
+          "publishedAt": "2024-03-20T17:50:49Z",
+          "content": "A former takeaway worker found with Bitcoin worth more than £2bn has been convicted at Southwark Crown Court of a crime linked to money laundering.\r\nJian Wen, 42, from Hendon in north London, was inv… [+2779 chars]"
+      },
+      {
+          "source": {
+              "id": "ars-technica",
+              "name": "Ars Technica"
+          },
+          "author": "Ashley Belanger",
+          "title": "Bitcoin price hits record $69K after SEC approvals fueled $7B in investments",
+          "description": "SEC chair warns bitcoin is still \"volatile\" and linked to \"illicit activity.\"",
+          "url": "https://arstechnica.com/tech-policy/2024/03/bitcoin-price-hits-record-69k-after-sec-approvals-fueled-7b-in-investments/",
+          "urlToImage": "https://cdn.arstechnica.net/wp-content/uploads/2024/03/GettyImages-1872368024-760x380.jpg",
+          "publishedAt": "2024-03-05T19:07:13Z",
+          "content": "20\r\nBitcoin's price hit a record high Tuesday, surging above $69,000 and notching past its prior peak price of $68,991.85 recorded in 2021.\r\nAfter bitcoin's price sunk in 2022 amid a cryptocurrency i… [+4343 chars]"
+      },
+      {
+          "source": {
+              "id": "ars-technica",
+              "name": "Ars Technica"
+          },
+          "author": "Ashley Belanger",
+          "title": "Bitcoin Fog operator convicted of laundering $400M in bitcoins on darknet",
+          "description": "Roman Sterlingov will appeal, denouncing DOJ's crypto-tracing techniques.",
+          "url": "https://arstechnica.com/tech-policy/2024/03/bitcoin-fog-operator-convicted-of-laundering-400m-in-bitcoins-on-darknet/",
+          "urlToImage": "https://cdn.arstechnica.net/wp-content/uploads/2024/03/GettyImages-1240726120-760x380.jpg",
+          "publishedAt": "2024-03-13T20:34:08Z",
+          "content": "19\r\nA US federal jury has convicted a dual Russian-Swedish national, Roman Sterlingov, for operating Bitcoin Fog, \"the longest-running bitcoin money laundering service on the darknet,\" the Department… [+5682 chars]"
+      },
+      {
+          "source": {
+              "id": null,
+              "name": "Gizmodo.com"
+          },
+          "author": "Matt Novak",
+          "title": "The Feds Are Reportedly Investigating Ethereum Foundation",
+          "description": "The U.S. Securities and Exchange Commission (SEC) is investigating the Ethereum Foundation and companies doing business with the nonprofit, according to a new report from Fortune Wednesday. And that’s very bad news for crypto enthusiasts who were hopeful that…",
+          "url": "https://gizmodo.com/sec-ethereum-price-bitcoin-investigation-crypto-etf-1851352576",
+          "urlToImage": "https://i.kinja-img.com/image/upload/c_fill,h_675,pg_1,q_80,w_1200/b5adaa02e058acea54ab69fa505844cc.jpg",
+          "publishedAt": "2024-03-20T18:15:00Z",
+          "content": "The U.S. Securities and Exchange Commission (SEC) is investigating the Ethereum Foundation and companies doing business with the nonprofit, according to a new report from Fortune Wednesday. And thats… [+2397 chars]"
+      },
+      {
+          "source": {
+              "id": null,
+              "name": "NPR"
+          },
+          "author": "David Gura",
+          "title": "Bitcoin hits a record high. Here are 4 things to know about this spectacular rally",
+          "description": "Bitcoin hit a record high, marking a remarkable comeback from a period known as the \"crypto winter.\" A big catalyst behind the gains has been the approval of new bitcoin investment funds.",
+          "url": "https://www.npr.org/2024/03/05/1235865112/bitcoin-record-high-rally-crypto-sec-etf",
+          "urlToImage": "https://media.npr.org/assets/img/2024/03/04/gettyimages-19217562081_wide-eba7c909ba5e0cb64e10c0f882f70414cf0a5847-s1400-c100.jpg",
+          "publishedAt": "2024-03-05T18:38:02Z",
+          "content": "Bitcoin hit a record high following a rally sparked by the Securities and Exchange Commission's approval of bitcoin exchange-traded funds.\r\nDan Kitwood/Getty Images\r\nBitcoin is trading at a new all-t… [+5142 chars]"
+      },
+      {
+          "source": {
+              "id": null,
+              "name": "ReadWrite"
+          },
+          "author": "Ali Rees",
+          "title": "Why did the Bitcoin price drop?",
+          "description": "Despite reaching record highs of almost $74,000 on Thursday (March 14), the price of Bitcoin (BTC) dropped by 9% early… Continue reading Why did the Bitcoin price drop?\nThe post Why did the Bitcoin price drop? appeared first on ReadWrite.",
+          "url": "https://readwrite.com/why-did-bitcoin-drop/",
+          "urlToImage": "https://readwrite.com/wp-content/uploads/2024/03/a_chart_showing_bitcoin_rising_a_lot_then_droppi.jpg",
+          "publishedAt": "2024-03-15T12:38:50Z",
+          "content": "Despite reaching record highs of almost $74,000 on Thursday (March 14), the price of Bitcoin (BTC) dropped by 9% early on Friday (March 15) to $66, 885.\r\nMany cryptocurrency traders will likely sell … [+2274 chars]"
+      },
+      {
+          "source": {
+              "id": null,
+              "name": "ReadWrite"
+          },
+          "author": "Radek Zielinski",
+          "title": "World’s top pension fund eyes Bitcoin",
+          "description": "Japan’s Government Pension Investment Fund (GPIF) is considering Bitcoin (BTC) as a potential investment diversification tool amidst economic and technological… Continue reading World’s top pension fund eyes Bitcoin\nThe post World’s top pension fund eyes Bitc…",
+          "url": "https://readwrite.com/worlds-top-pension-fund-eyes-bitcoin/",
+          "urlToImage": "https://readwrite.com/wp-content/uploads/2024/03/Japanese-investors.png",
+          "publishedAt": "2024-03-19T14:13:51Z",
+          "content": "Japan’s Government Pension Investment Fund (GPIF) is considering Bitcoin (BTC) as a potential investment diversification tool amidst economic and technological changes.\r\nAccording to a Mar. 19 announ… [+2534 chars]"
+      },
+      {
+          "source": {
+              "id": "business-insider",
+              "name": "Business Insider"
+          },
+          "author": "prosen@insider.com (Phil Rosen)",
+          "title": "El Salvador's millennial crypto-loving president says the country's bitcoin holdings are up more than 40%",
+          "description": "Nayib Bukele said if El Salvador sold all of the bitcoin in its coffers today, it would bank roughly $41.6 million in profit.",
+          "url": "https://markets.businessinsider.com/news/currencies/bitcoin-price-el-salvador-millennial-president-bukele-investment-cryptocurrency-finance-2024-2",
+          "urlToImage": "https://i.insider.com/65df846290413ab8e1d796e4?width=1200&format=jpeg",
+          "publishedAt": "2024-02-29T12:46:09Z",
+          "content": "President Nayib Bukele said El Salvador won't sell its bitcoin investment.\r\nEmerson Flores/APHOTOGRAFIA/Getty Images\r\nEl Salvador is up big on its bitcoin bet, according to its millennial president N… [+2026 chars]"
+      },
+      {
+          "source": {
+              "id": "business-insider",
+              "name": "Business Insider"
+          },
+          "author": "prosen@insider.com (Phil Rosen)",
+          "title": "Why crypto is surging back to all-time highs and shrugging off high interest rates",
+          "description": "Bitcoin suffered during the Fed's tightening cycle, but is rallying once again as a supply-demand imbalance offsets rate pressures.",
+          "url": "https://markets.businessinsider.com/news/currencies/bitcoin-price-outlook-explained-cryptocurrency-record-high-interest-rates-fed-2024-3",
+          "urlToImage": "https://i.insider.com/65e603d790413ab8e1d8e646?width=1200&format=jpeg",
+          "publishedAt": "2024-03-04T18:47:06Z",
+          "content": "Bitcoin is in the midst of a prolonged rebound back to levels last seen when interest rates were near zero and pixelated artwork was regularly selling for millions. \r\nOn Monday, bitcoin spiked more t… [+3350 chars]"
+      }
+  ]
+}
