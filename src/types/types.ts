@@ -18,15 +18,15 @@ export interface userInterface extends ProfileInterface {
 
 export interface AuthInterface {
 
-  authenticated: Boolean;
+  authenticated: boolean;
   roleType: "admin" | "user" | "";
 }
 export type NewSourcesTypes = "newsapi" | "theguardian" | "nytimes"
 export interface ArticleInterface {
-  title: String;
-  date: String;
-  category: String;
-  source: NewSourcesTypes;
+  title: string;
+  date: string;
+  urlToImage: string;
+  apiDataSource: NewSourcesTypes;
 }
 
 

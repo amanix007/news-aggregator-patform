@@ -95,7 +95,7 @@ type Props = {};
 export default function HomePage({}: Props) {
   const [articleList, setarticleList] = useState<any>([]);
   const [loading, setloading] = useState<Boolean>(false);
-  const [queryString, setQueryString] = useState<String>("bitcoin");
+  const [queryString, setQueryString] = useState<string>("bitcoin");
 
   const combinedDataFetch = async (e) => {
     e.preventDefault();
@@ -104,28 +104,41 @@ export default function HomePage({}: Props) {
       return;
     }
     setloading(true);
-    const res = await Promise.all([
-    // const [newsapiResponse,theguardianResponse,nytimesResponse] = Promise.all([
-      searchInNewsapi(queryString),
-      searchIntheGurdian(queryString),
-      searchInNyTimes(queryString),
-    ]);
-    console.log(res)
-    // if (isEmpty(newsapiResponse)) {
-    //   toast.error("NewsAPI Data not found");
-    // } else {
-    //   toast.success("NewsAPI Data not found");
-    // }
-    // if (isEmpty(theguardianResponse)) {
-    //   toast.error("the gurdian Data not found");
-    // } else {
-    //   toast.success("the gurdian Data not found");
-    // }
-    // const { articleList, dateRange, categoryList } = responseSerialiser({
-    //   newsapiResponse,
-    //   theguardianResponse,
-    //   nytimesResponse,
-    // });
+    const combinedResponse = {
+      newsapiResponse: null,
+      theguardianResponse: null,
+      nytimesResponse: null,
+    };
+
+    const [newsapiResponse, theguardianResponse, nytimesResponse] =
+      await Promise.all([
+        searchInNewsapi(queryString),
+        searchIntheGurdian(queryString),
+        searchInNyTimes(queryString),
+      ]);
+    if (isEmpty(newsapiResponse)) {
+      toast.error("NewsAPI Data not found");
+    } else {
+      toast.success("NewsAPI Data found");
+      combinedResponse.newsapiResponse = newsapiResponse;
+    }
+    if (isEmpty(theguardianResponse)) {
+      toast.error("the gurdian Data not found");
+    } else {
+      toast.success("the gurdian Data  found");
+      combinedResponse.theguardianResponse = theguardianResponse;
+    }
+    if (isEmpty(nytimesResponse)) {
+      toast.error("the nytimes Data not found");
+    } else {
+      toast.success("the nytimes Data  found");
+      combinedResponse.nytimesResponse = nytimesResponse;
+    }
+    const  articleList =
+      responseSerialiser(combinedResponse);
+      
+
+    console.log("articleList:", articleList);
     setloading(false);
   };
   useEffect(() => {}, []);

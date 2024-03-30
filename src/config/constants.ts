@@ -9,7 +9,7 @@ export const NewsSources = {
   theguardian: {
     key: "theguardian",
     baseURL: "https://content.guardianapis.com",
-    apiKey: "b632b12a-acb8-4f97-a2a8-99e8d19cb53e"
+    apiKey: "045a00c2-8389-4035-932d-c00999cd4816"
 
   },
   nytimes: {
