@@ -21,6 +21,8 @@ import {
 } from "../misc/common";
 import { isEmpty } from "lodash";
 import toast from "react-hot-toast";
+import { ArticleInterface } from "../types/types";
+import moment from "moment";
 
 const articles = [
   {
@@ -93,12 +95,12 @@ const SearchButton = styled(Button)(({ theme }) => ({
 type Props = {};
 
 export default function HomePage({}: Props) {
-  const [articleList, setarticleList] = useState<any>([]);
+  const [articleList, setarticleList] = useState<ArticleInterface>([]);
   const [loading, setloading] = useState<Boolean>(false);
   const [queryString, setQueryString] = useState<string>("bitcoin");
 
   const combinedDataFetch = async (e) => {
-    e.preventDefault();
+    e && e.preventDefault();
     if (!queryString) {
       alert("please enter a query");
       return;
@@ -109,12 +111,18 @@ export default function HomePage({}: Props) {
       theguardianResponse: null,
       nytimesResponse: null,
     };
+    const begin_date = moment();
+    const end_date = moment().add(1, "month");
 
     const [newsapiResponse, theguardianResponse, nytimesResponse] =
       await Promise.all([
-        searchInNewsapi(queryString),
+        searchInNewsapi(queryString, begin_date.format("YYYY-MM-DD")),
         searchIntheGurdian(queryString),
-        searchInNyTimes(queryString),
+        searchInNyTimes(
+          queryString,
+          begin_date.format("YYYYMMDD"),
+          end_date.format("YYYYMMDD")
+        ),
       ]);
     if (isEmpty(newsapiResponse)) {
       toast.error("NewsAPI Data not found");
@@ -134,14 +142,15 @@ export default function HomePage({}: Props) {
       toast.success("the nytimes Data  found");
       combinedResponse.nytimesResponse = nytimesResponse;
     }
-    const  articleList =
-      responseSerialiser(combinedResponse);
-      
+    const articleList = responseSerialiser(combinedResponse);
 
     console.log("articleList:", articleList);
     setloading(false);
   };
-  useEffect(() => {}, []);
+  useEffect(() => {
+    combinedDataFetch(null);
+  }, []);
+  
   return (
     <div>
       <Container maxWidth="xl">
@@ -165,7 +174,6 @@ export default function HomePage({}: Props) {
             <SearchButton
               variant="contained"
               sx={{ textWrap: "nowrap" }}
-              type="submit"
               onClick={combinedDataFetch}
             >
               Search

@@ -7,7 +7,7 @@ import { theme } from "./theme/theme.ts";
 import { BrowserRouter } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
+  <>
     <>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
@@ -23,5 +23,5 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       <Toaster/>
       </BrowserRouter>
     </ThemeProvider>
-  </React.StrictMode>
+  </>
 );
